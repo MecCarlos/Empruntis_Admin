@@ -139,7 +139,7 @@ function Home() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h2 style={{ fontSize: '1.8rem', fontWeight: 800, letterSpacing: '-0.8px' }}>
-            Bonjour Charbel ! 👋
+            Bonjour admin ! 👋
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.25rem' }}>
             Voici les indicateurs clés de vos demandes de prêt aujourd'hui.

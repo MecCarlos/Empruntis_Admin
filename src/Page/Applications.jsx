@@ -17,6 +17,9 @@ import {
   Database
 } from 'lucide-react';
 
+// Configuration de l'API - CENTRALISÉE
+const API_BASE_URL = 'https://empruntisserver.vercel.app';
+
 function Applications() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,7 +35,7 @@ function Applications() {
   const fetchApplications = async () => {
     try {
       setError(false);
-      const response = await fetch('http://localhost:5000/api/loan-applications');
+      const response = await fetch(`${API_BASE_URL}/api/loan-applications`);
       if (response.ok) {
         const json = await response.json();
         if (json.success && json.data) {
@@ -66,7 +69,7 @@ function Applications() {
   const handleUpdateStatus = async (id, status) => {
     setActionLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/loan-applications/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/loan-applications/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -148,7 +151,7 @@ function Applications() {
           <div>
             <span style={{ display: 'block', fontWeight: 700 }}>Problème de connexion avec la base de données</span>
             <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-              Impossible de charger les données depuis l'API Supabase. Veuillez vous assurer que le serveur backend est démarré.
+              Impossible de charger les données depuis l'API Supabase. Veuillez vérifier que le serveur backend est démarré.
             </span>
           </div>
         </div>
@@ -328,7 +331,7 @@ function Applications() {
               {/* Profile Card Header in Modal */}
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', padding: '1rem', backgroundColor: 'var(--bg-app)', borderRadius: 'var(--radius-md)' }}>
                 <div className="admin-avatar" style={{ width: '48px', height: '48px', fontSize: '1.2rem' }}>
-                  {selectedApp.first_name[0]}{selectedApp.last_name[0]}
+                  {selectedApp.first_name?.[0]}{selectedApp.last_name?.[0]}
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>{selectedApp.first_name} {selectedApp.last_name}</span>

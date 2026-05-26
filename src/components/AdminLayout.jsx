@@ -154,7 +154,7 @@ function AdminLayout() {
                 <User size={16} />
               </div>
               <div className="admin-profile-info">
-                <span className="admin-profile-name">Charbel Q.</span>
+                <span className="admin-profile-name">Admin</span>
                 <span className="admin-profile-role">Administrateur</span>
               </div>
             </div>
