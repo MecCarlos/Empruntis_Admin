@@ -101,14 +101,7 @@ function AdminLayout() {
             <span>Demandes</span>
           </NavLink>
 
-          <NavLink 
-            to="/settings" 
-            className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
-            onClick={() => setIsSidebarOpen(false)}
-          >
-            <SettingsIcon size={18} />
-            <span>Paramètres</span>
-          </NavLink>
+          
         </nav>
 
         <div className="sidebar-footer">
